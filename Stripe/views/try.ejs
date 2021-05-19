@@ -1,0 +1,68 @@
+<html>
+
+<head>
+	<title>Check/Uncheck the checkbox using JavaScript</title>
+</head>
+
+<body>
+	<center>
+		<h1 style="color:green">GeeksforGeeks</h1>
+		<h2>Check/Uncheck the checkbox using JavaScript</h2>
+		<form>
+			<div>
+				<input type="button" onclick="checkAll()" value="CHECK ALL">
+				<input type="button" onclick="check()" value="CHECK One">
+				<input type="button" onclick="uncheck()" value="UN CHECK One">
+				<input type="reset" value="UNCHECK ALL">
+			</div>
+			<div>
+				<label>
+					<input type="checkbox" id = "ambuj" onclick = "print()" class="check3"> First
+				</label>
+			</div>
+			<div>
+				<label>
+					<input type="checkbox" id = "ambuj" onclick = "print()" class="check3"> Second
+				</label>
+			</div>
+			<div>
+				<label>
+					<input type="checkbox" id = "ambuj" onclick = "print()" class="check3"> Third
+				</label>
+			</div>
+		</form>
+	</center>
+</body>
+
+<script> 
+function check() {
+    document.getElementById("ambuj").checked = true;
+}
+
+function print() {
+    var x = document.getElementById("ambuj").checked;
+	if(x)
+	alert("Hello! I am an checked alert box!");
+	if(!x)
+	alert("Hello! I am an unchecked alert box!");	
+}
+
+function uncheck() {
+    document.getElementById("ambuj").checked = false;
+}
+</script>
+
+<script type="text/javascript">
+	//create function of check/uncheck box
+	function checkAll() {
+		var inputs = document.querySelectorAll('.check3');
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].checked = true;
+		}
+	}
+	window.onload = function() {
+		window.addEventListener('load', checkAll, false);
+	}
+</script>
+
+</html>
